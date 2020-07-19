@@ -27,5 +27,5 @@ export default {
   networkTimeout: {
     request: 10000,
 	},
-	debug:true
+	debug:false
 }

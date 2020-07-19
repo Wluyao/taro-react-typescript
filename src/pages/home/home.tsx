@@ -1,29 +1,23 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Taro from '@tarojs/taro'
 import { View, Text, Button } from '@tarojs/components'
 import './style.scss'
 
- 
-class Home extends Component {
-  public onPullDownRefresh() {
-    console.log('刷新')
-  }
+const Home: React.FC = () => {
 
-  public render() {
-    return (
-      <View>
-        <Text className="text">fdsg </Text>
-        <Button onClick={this.handleClick}>点击刷新</Button>
-      </View>
-    )
-  }
-
-  private handleClick = () => {
+  const handleClick = () => {
     Taro.startPullDownRefresh()
     setTimeout(() => {
       Taro.stopPullDownRefresh()
     }, 2000)
   }
+
+  return (
+    <View>
+      <Text className="text">fdsg </Text>
+      <Button onClick={handleClick}>点击刷新</Button>
+    </View>
+  )
 }
 
 export default Home
