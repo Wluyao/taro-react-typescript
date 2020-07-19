@@ -1,6 +1,6 @@
 {
 	"miniprogramRoot": "dist/",
-	"projectname": "taro-demo",
+	"projectname": "taro-react-typescript",
 	"description": "demo",
 	"appid": "touristappid",
 	"setting": {
