@@ -9,6 +9,8 @@ export default {
   tabBar: {
     color: '#707070',
     selectedColor: '#30A7B0',
+    backgroundColor: '#fff',
+    borderStyle: 'white',
     list: [
       {
         pagePath: 'pages/home/home',
@@ -25,7 +27,7 @@ export default {
     ]
   },
   networkTimeout: {
-    request: 10000,
-	},
-	debug:false
+    request: 10000
+  },
+  debug: false
 }

@@ -1,10 +1,11 @@
 import React from 'react'
 import Taro from '@tarojs/taro'
-import { View, Text, Button } from '@tarojs/components'
+import { View, Button } from '@tarojs/components'
+import { AtButton } from 'taro-ui'
+import Icon from '@/components/base/icon'
 import './style.scss'
 
 const Home: React.FC = () => {
-
   const handleClick = () => {
     Taro.startPullDownRefresh()
     setTimeout(() => {
@@ -14,7 +15,8 @@ const Home: React.FC = () => {
 
   return (
     <View>
-      <Text className="text">fdsg </Text>
+      <AtButton type="primary">按钮文案</AtButton>
+      <Icon name="setting" />
       <Button onClick={handleClick}>点击刷新</Button>
     </View>
   )
