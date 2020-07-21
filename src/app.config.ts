@@ -15,14 +15,14 @@ export default {
       {
         pagePath: 'pages/home/home',
         text: '首页',
-        iconPath: 'assets/images/home.png',
-        selectedIconPath: 'assets/images/home_select.png'
+        iconPath: 'assets/images/tab/home.png',
+        selectedIconPath: 'assets/images/tab/home_select.png'
       },
       {
         pagePath: 'pages/mine/mine',
         text: '我的',
-        iconPath: 'assets/images/contact.png',
-        selectedIconPath: 'assets/images/contact_select.png'
+        iconPath: 'assets/images/tab/contact.png',
+        selectedIconPath: 'assets/images/tab/contact_select.png'
       }
     ]
   },

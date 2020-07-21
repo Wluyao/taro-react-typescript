@@ -1,0 +1,13 @@
+.text-ellipsis__multiple {
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.text-ellipsis__single {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

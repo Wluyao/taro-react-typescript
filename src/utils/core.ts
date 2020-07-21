@@ -21,23 +21,7 @@ export const guid = (): string => {
   )
 }
 
-/**
- * 获取url中的查询字符串参数
- */
-export const getURLParams = (url: string): any => {
-  const search = url.split('?')[1]
-  if (!search) {
-    return {}
-  }
-  return JSON.parse(
-    '{"' +
-      decodeURIComponent(search)
-        .replace(/"/g, '\\"')
-        .replace(/&/g, '","')
-        .replace(/=/g, '":"') +
-      '"}'
-  )
-}
+
 
 /**
  * 用于需要在get请求中传递数组的情况
@@ -60,55 +44,6 @@ export function paramsSerializer(params = {}) {
 }
 
 /**
- * 判断数据类型
- */
-export const getType = (value: any): any => {
-  return value === undefined
-    ? 'undefined'
-    : value === null
-    ? 'null'
-    : value.constructor.name.toLowerCase()
-}
-
-/**
- * 深克隆
- */
-export const deepClone = (source: any) => {
-  if (typeof source !== 'object' || source === null) {
-    return source
-  }
-  const target = Array.isArray(source) ? [] : {}
-  for (const [key, value] of Object.entries(source)) {
-    target[key] = deepClone(value)
-  }
-  return target
-}
-
-/**
- * 加载第三方脚本
- */
-export const loadScript = (
-  src: string,
-  callback: (err: any, res: any) => void
-) => {
-  const existScript = document.getElementById(src)
-  if (existScript) {
-    callback(null, existScript)
-  } else {
-    const script = document.createElement('script')
-    script.src = src
-    script.id = src
-    document.body.appendChild(script)
-    script.onload = () => {
-      callback(null, script)
-    }
-    script.onerror = () => {
-      callback(new Error(`“${src}”加载失败`), script)
-    }
-  }
-}
-
-/**
  * 将数值使用逗号隔开，一般用于金额的输入
  */
 export const getCommaNumber = (value: any) => {
@@ -125,4 +60,18 @@ export const getCommaNumber = (value: any) => {
   }
   const listSecond = list[1] ? '.' + list[1] : ''
   return `${prefix}${result}${listSecond}`
+}
+
+/**
+ * 将对象转换成字符串,一般用于内联样式
+ */
+export const objectToString = (obj?: object) => {
+  if (obj) {
+    let objStr = ''
+    Object.keys(obj).forEach((key) => {
+      objStr += `${key}:${obj[key]};`
+    })
+    return objStr
+  }
+  return ''
 }

@@ -2,7 +2,6 @@ import React from 'react'
 import Taro from '@tarojs/taro'
 import { Text } from '@tarojs/components'
 import classNames from 'classnames'
-import './style.scss'
 
 interface IProps {
   name: string
