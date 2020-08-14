@@ -54,8 +54,50 @@
   border-radius: 50%;
 }
 
-// 边框阴影
-@mixin box-shadow {
-  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+// 上边框
+@mixin border-top(
+  $left: size(10),
+  $right: size(10),
+  $size: size(1),
+  $bgc: #ebebeb
+) {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: $left;
+    right: $right;
+    background-color: $bgc;
+    height: size(1);
+  }
 }
 
+// 下边框
+@mixin border-bottom(
+  $left: size(10),
+  $right: size(10),
+  $size: size(1),
+  $bgc: #ebebeb
+) {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: $left;
+    right: $right;
+    background-color: $bgc;
+    height: $size;
+  }
+}
+
+// 按钮点击
+@mixin button-active {
+  &:active {
+    background-color: rgba(0, 0, 0, 0.1) !important;
+    opacity: 0.7;
+  }
+}

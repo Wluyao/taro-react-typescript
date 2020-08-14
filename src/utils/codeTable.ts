@@ -1,22 +1,22 @@
 /* 基础数据映射表管理 */
+import { tupleStr } from '@/utils/tuple'
+
+// 性别
+const Gender = [
+  { id: 1, name: '男' },
+  { id: 2, name: '女' }
+]
+
 
 const fixTable: ITable[] = [
   {
     name: 'gender',
-    list: [
-      { id: 1, name: '男' },
-      { id: 2, name: '女' }
-    ]
+    list: Gender
   }
 ]
 
-// 表名。方便使用的时候调用
-const TABLE_NAME_MAP = {
-  gender: 'gender',
-  role: 'role',
-  region: 'region',
-  article: 'article'
-}
+const TableNames = tupleStr('gender')
+type TableName = typeof TableNames[number]
 
 interface IItem {
   id: number
@@ -29,12 +29,9 @@ interface ITable {
 }
 
 export class CodeTable {
-  public tableNameMap = {}
-
   private data: ITable[] = []
 
   constructor(data: ITable[]) {
-    this.tableNameMap = TABLE_NAME_MAP
     this.data = data
   }
 
@@ -49,9 +46,9 @@ export class CodeTable {
 
   /**
    * 获取某个表
-   * @param {String} tableName 表名
+   * @param {TableName} tableName 表名
    */
-  public getTable(tableName: string) {
+  public getTable(tableName: TableName) {
     const table = this.data.find((item) => item.name === tableName)
     if (table) {
       return table
@@ -76,39 +73,42 @@ export class CodeTable {
 
   /**
    * 获取某个表的所有项的id
-   * @param {String} tableName 表名
+   * @param {TableName} tableName 表名
    */
-  public getIds(tableName: string) {
+  public getIds(tableName: TableName) {
     const table = this.getTable(tableName)
     return table.list.map((item) => item.id)
   }
 
   /**
    * 获取某个表的所有项的name
-   * @param {String} tableName 表名
+   * @param {TableName} tableName 表名
    */
-  public getNames(tableName: string) {
+  public getNames(tableName: TableName) {
     const table = this.getTable(tableName)
     return table.list.map((item) => item.name)
   }
 
   /**
    * 获取某个表中某一项的名称
-   * @param {String} tableName 表名
+   * @param {TableName} tableName 表名
    * @param {Number} id
    */
-  public getNameById(tableName: string, id: number) {
+  public getNameById(tableName: TableName, id?: number) {
     const table = this.getTable(tableName)
+    if (!id && id !== 0) {
+      return ''
+    }
     const result = table.list.find((item) => item.id === id)
     return result ? result.name : ''
   }
 
   /**
    * 根据id列表获取名称列表
-   * @param {String} tableName 表名
+   * @param {TableName} tableName 表名
    * @param {Array} ids
    */
-  public getNamesByIds(tableName: string, ids: number[]) {
+  public getNamesByIds(tableName: TableName, ids: number[]) {
     const table = this.getTable(tableName)
     const names: string[] = []
     table.list.forEach((item) => {
@@ -123,7 +123,7 @@ export class CodeTable {
    * 格式化为指定的数据结构
    * ** 比如有的地方使用value,label **
    */
-  public formatTable(tableName: string, idFiled: string, nameFiled: string) {
+  public formatTable(tableName: TableName, idFiled: string, nameFiled: string) {
     const table = this.getTable(tableName)
     return table.list.map((item) => ({
       [idFiled]: item.id,

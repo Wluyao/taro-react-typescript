@@ -1,0 +1,31 @@
+.com-avatar {
+  margin-right: size(6);
+  background-color: #ddd;
+
+  &.shape {
+    &--circle {
+      border-radius: 50%;
+    }
+
+    &--rect {
+      border-radius: size(4);
+    }
+  }
+
+  &.gender {
+    &--default {
+      border: 1px solid #999;
+    }
+    &--male {
+      border: 1px solid #3c90ff;
+    }
+
+    &--female {
+      border: 1px solid #ee5b5b;
+    }
+
+    &--ignore {
+      border: 2px solid #fff;
+    }
+  }
+}

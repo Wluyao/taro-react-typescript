@@ -1,0 +1,18 @@
+button {
+  height: 100px !important;
+}
+
+.hover-class {
+  background-color: rgba(0, 0, 0, 0.1) !important;
+  opacity: 0.7;
+}
+
+// 顶部菜单栏下边的阴影
+.header-shadow {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: size(1);
+  box-shadow: 0 0 size(4) 0 rgba(0, 0, 0, 0.2);
+  z-index: 100;
+}

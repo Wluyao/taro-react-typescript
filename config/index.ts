@@ -20,6 +20,7 @@ const config = {
   },
   sass: {
     resource: [
+      'src/assets/styles/function.scss',
       'src/assets/styles/variable.scss',
       'src/assets/styles/mixin.scss'
     ],

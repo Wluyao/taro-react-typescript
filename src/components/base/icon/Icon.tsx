@@ -1,34 +1,45 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import Taro from '@tarojs/taro'
 import { Text } from '@tarojs/components'
 import classNames from 'classnames'
 
-interface IProps {
+interface IIcon {
   name: string
-  size?: string | number
+  size?: number
   color?: string
   className?: string[] | string
   style?: React.CSSProperties
   onclick?: () => void
 }
 
-const Icon: React.FC<IProps> = (props) => {
-  const { name, size = 32, color, className, style, onclick } = props
+/**
+ * name：图标
+ */
+const Icon: React.FC<IIcon> = (props) => {
+  const { name, size = 16, color, className, style, onclick } = props
 
   const handleClick = () => {
     onclick && onclick()
   }
 
+  const iconStyle = useMemo(
+    () => ({
+      fontSize: Taro.pxTransform(size * 2),
+      color
+    }),
+    [size, color]
+  )
+
   return (
     <Text
-      className={classNames('iconfont', `icon${name}`, className)}
+      className={classNames('iconfont', className, `icon${name}`)}
       style={{
         ...style,
-        fontSize: `${Taro.pxTransform(parseInt(String(size)))}`,
-        color
+        ...iconStyle
       }}
       onClick={handleClick}
-    ></Text>
+    />
   )
 }
+
 export default Icon

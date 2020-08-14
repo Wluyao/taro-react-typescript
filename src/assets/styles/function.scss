@@ -1,0 +1,4 @@
+// 尺寸大小转换
+@function size($value) {
+  @return $value * 2px;
+}

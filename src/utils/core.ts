@@ -63,7 +63,7 @@ export const getCommaNumber = (value: any) => {
 }
 
 /**
- * 将对象转换成字符串,一般用于内联样式
+ * 将对象转换成style字符串,用于内联样式
  */
 export const objectToString = (obj?: object) => {
   if (obj) {

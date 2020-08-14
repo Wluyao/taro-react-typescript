@@ -1,0 +1,101 @@
+$border-radius-size: size(5);
+$transition-timing-function: cubic-bezier(0.7, 0.3, 0.1, 1);
+
+.com-drawer {
+  position: fixed;
+  z-index: 1000;
+
+  &__mask {
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition-property: opacity;
+    transition-timing-function: $transition-timing-function;
+  }
+
+  &__container {
+    position: fixed;
+    background-color: #fff;
+    overflow: auto;
+    transition-property: transform;
+    transition-timing-function: $transition-timing-function;
+
+    .close {
+      position: absolute;
+      top: size(0);
+      right: size(10);
+      font-size: size(26);
+      font-weight: 300;
+      color: $black9;
+      z-index: 1;
+    }
+  }
+
+  &--show {
+    .com-drawer__mask {
+      right: 0;
+      bottom: 0;
+      opacity: 1;
+    }
+
+    &.com-drawer--left,
+    &.com-drawer--right {
+      .com-drawer__container {
+        transform: translateX(0) !important ;
+      }
+    }
+
+    &.com-drawer--top,
+    &.com-drawer--bottom {
+      .com-drawer__container {
+        transform: translateY(0) !important ;
+      }
+    }
+  }
+
+  &--left {
+    .com-drawer__container {
+      left: 0;
+      top: 0;
+      bottom: 0;
+      transform: translateX(-100%);
+      border-top-right-radius: $border-radius-size;
+      border-bottom-right-radius: $border-radius-size;
+    }
+  }
+
+  &--right {
+    .com-drawer__container {
+      right: 0;
+      top: 0;
+      bottom: 0;
+      transform: translateX(100%);
+      border-top-left-radius: $border-radius-size;
+      border-bottom-left-radius: $border-radius-size;
+    }
+  }
+
+  &--top {
+    .com-drawer__container {
+      left: 0;
+      right: 0;
+      top: 0;
+      transform: translateY(-100%);
+      border-bottom-left-radius: $border-radius-size;
+      border-bottom-right-radius: $border-radius-size;
+    }
+  }
+
+  &--bottom {
+    .com-drawer__container {
+      left: 0;
+      right: 0;
+      bottom: 0;
+      transform: translateY(100%);
+      border-top-left-radius: $border-radius-size;
+      border-top-right-radius: $border-radius-size;
+    }
+  }
+}

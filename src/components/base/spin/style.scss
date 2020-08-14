@@ -1,0 +1,39 @@
+.com-spin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 1000;
+
+  &__icon {
+    width: size(3);
+    height: size(3);
+    border-radius: 100%;
+    box-shadow: 0 size(-10) 0 size(1) $theme, size(10) 0 $theme,
+      0 size(10) $theme, size(-10) 0 $theme,
+      size(-7) size(-7) 0 size(0.5) $theme, size(7) size(-7) 0 size(1.5) $theme,
+      size(7) size(7) $theme, size(-7) size(7) $theme;
+    animation: spin 1s steps(8) infinite;
+  }
+
+  &__message {
+    color: $theme;
+    margin-top: size(15);
+    font-size: size(14);
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
