@@ -1285,6 +1285,19 @@
     webpack-format-messages "^2.0.5"
     yauzl "2.10.0"
 
+"@tarojs/mobx-common@^2.2.10":
+  version "2.2.10"
+  resolved "https://registry.npm.taobao.org/@tarojs/mobx-common/download/@tarojs/mobx-common-2.2.10.tgz#c6c152ba7e714727d088055bd2190cf0712f7d33"
+  integrity sha1-xsFSun5xRyfQiAVb0hkM8HEvfTM=
+
+"@tarojs/mobx@^2.2.10":
+  version "2.2.10"
+  resolved "https://registry.npm.taobao.org/@tarojs/mobx/download/@tarojs/mobx-2.2.10.tgz#ce7fbc7748e38246290055a6c10637bd29066847"
+  integrity sha1-zn+8d0jjgkYpAFWmwQY3vSkGaEc=
+  dependencies:
+    "@tarojs/mobx-common" "^2.2.10"
+    "@tarojs/taro" "^2.2.10"
+
 "@tarojs/react@3.0.4":
   version "3.0.4"
   resolved "https://registry.npm.taobao.org/@tarojs/react/download/@tarojs/react-3.0.4.tgz?cache=0&sync_timestamp=1594888076623&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40tarojs%2Freact%2Fdownload%2F%40tarojs%2Freact-3.0.4.tgz#cc68c90bd54f8d1057cbf9cf0f947bcc2702ce46"
@@ -1355,6 +1368,18 @@
   dependencies:
     "@tarojs/api" "3.0.4"
     "@tarojs/taro-h5" "3.0.4"
+
+"@tarojs/taro@^2.2.10":
+  version "2.2.13"
+  resolved "https://registry.npm.taobao.org/@tarojs/taro/download/@tarojs/taro-2.2.13.tgz?cache=0&sync_timestamp=1596546023747&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40tarojs%2Ftaro%2Fdownload%2F%40tarojs%2Ftaro-2.2.13.tgz#1e4702a60a36c9ad4725809a170d6b739b73171b"
+  integrity sha1-HkcCpgo2ya1HJYCaFw1rc5tzFxs=
+  dependencies:
+    "@tarojs/utils" "2.2.13"
+
+"@tarojs/utils@2.2.13":
+  version "2.2.13"
+  resolved "https://registry.npm.taobao.org/@tarojs/utils/download/@tarojs/utils-2.2.13.tgz?cache=0&sync_timestamp=1596177677753&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40tarojs%2Futils%2Fdownload%2F%40tarojs%2Futils-2.2.13.tgz#ac452d0743a6dee494ce8bfe529f904aa3e2c6ad"
+  integrity sha1-rEUtB0Om3uSUzov+Up+QSqPixq0=
 
 "@tarojs/webpack-runner@3.0.4":
   version "3.0.4"
@@ -6588,6 +6613,23 @@ mobile-detect@^1.4.2:
   version "1.4.4"
   resolved "https://registry.npm.taobao.org/mobile-detect/download/mobile-detect-1.4.4.tgz#686c74e92d3cc06b09a9b3594b7b981494b137f6"
   integrity sha1-aGx06S08wGsJqbNZS3uYFJSxN/Y=
+
+mobx-react-lite@>=2.0.6:
+  version "2.0.7"
+  resolved "https://registry.npm.taobao.org/mobx-react-lite/download/mobx-react-lite-2.0.7.tgz#1bfb3b4272668e288047cf0c7940b14e91cba284"
+  integrity sha1-G/s7QnJmjiiAR88MeUCxTpHLooQ=
+
+mobx-react@^6.2.5:
+  version "6.2.5"
+  resolved "https://registry.npm.taobao.org/mobx-react/download/mobx-react-6.2.5.tgz?cache=0&sync_timestamp=1595990790682&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fmobx-react%2Fdownload%2Fmobx-react-6.2.5.tgz#9020a17b79cc6dc3d124ad89ab36eb9ea540a45b"
+  integrity sha1-kCChe3nMbcPRJK2JqzbrnqVApFs=
+  dependencies:
+    mobx-react-lite ">=2.0.6"
+
+mobx@^5.15.6:
+  version "5.15.6"
+  resolved "https://registry.npm.taobao.org/mobx/download/mobx-5.15.6.tgz?cache=0&sync_timestamp=1597660436709&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fmobx%2Fdownload%2Fmobx-5.15.6.tgz#24750af56f87bcf9c3cf82ece4c79eb91bb71968"
+  integrity sha1-JHUK9W+HvPnDz4Ls5MeeuRu3GWg=
 
 move-concurrently@^1.0.1:
   version "1.0.1"

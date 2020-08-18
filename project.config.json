@@ -2,7 +2,7 @@
 	"miniprogramRoot": "dist/",
 	"projectname": "taro-react-typescript",
 	"description": "demo",
-	"appid": "touristappid",
+	"appid": "wx7c0c9ba66c37cb23",
 	"setting": {
 		"urlCheck": true,
 		"es6": false,

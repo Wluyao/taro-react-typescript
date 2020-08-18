@@ -2,8 +2,8 @@ import Taro from '@tarojs/taro'
 import config from '@/config'
 
 interface IFail {
-  msg?: string
   code?: number
+  msg?: string
   [key: string]: any
 }
 
@@ -34,7 +34,10 @@ class Request {
     } else {
       const data = {
         ...response.data,
-        ...{ msg: response.data.error_text, code: response.data.error_code }
+        ...{
+          msg: response.data.error_text,
+          code: response.data.error_code
+        }
       }
 
       return Promise.reject(data as IFail)

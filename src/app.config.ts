@@ -10,7 +10,6 @@ export default {
     color: '#707070',
     selectedColor: '#30A7B0',
     backgroundColor: '#fff',
-    borderStyle: 'white',
     list: [
       {
         pagePath: 'pages/home/home',
