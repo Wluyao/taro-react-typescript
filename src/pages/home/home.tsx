@@ -1,21 +1,15 @@
-import React from 'react'
-import { observer } from '@tarojs/mobx'
-import { View, Button } from '@tarojs/components'
-import { AtButton } from 'taro-ui'
-import Icon from '@/components/base/icon'
+import React, { useState, useEffect } from 'react'
+import Taro from '@tarojs/taro'
+import { View } from '@tarojs/components'
 import './style.scss'
 
-import Abc from './components/abc'
-import Test from './components/test'
-const Home: React.FC = observer(() => {
+const Home: React.FC = () => {
   return (
     <View className="page-home">
-      <AtButton type="primary">按钮文案</AtButton>
-      <Icon name="share" color="red" size={40} />
-      <Abc />
-      <Test />
+      <View style={{ fontSize: Taro.pxTransform(16 * 2) }}>这是一个标题</View>
     </View>
   )
-})
+}
 
 export default Home
+

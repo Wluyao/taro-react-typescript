@@ -1,10 +1,10 @@
 export default {
   pages: ['pages/home/home', 'pages/mine/mine'],
   window: {
-    backgroundTextStyle: 'light',
     navigationBarBackgroundColor: '#30A7B0',
-    navigationBarTitleText: 'WeChat',
-    navigationBarTextStyle: 'black'
+    navigationBarTextStyle: 'black',
+    backgroundTextStyle: 'light',
+    backgroundColor: '#f7f7f7'
   },
   tabBar: {
     color: '#707070',
