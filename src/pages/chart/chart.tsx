@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { View } from '@tarojs/components'
-// import F2 from '../../f2-canvas/lib/f2'
+import F2 from './f2-canvas/lib/f2'
 import './style.scss'
 
 interface IItem {
@@ -58,26 +58,26 @@ const Chart: React.FC = () => {
 
   const chartOpts = {
     onInit(canvas, width, height) {
-      // const chart = new F2.Chart({
-      //   el: canvas,
-      //   width,
-      //   height,
-      //   padding: [50, 10, 30, 30]
-      // })
-      // chart.source(data, {
-      //   value: {
-      //     alias: '访问量'
-      //   }
-      // })
-      // chart.tooltip({
-      //   showTitle: true,
-      //   showCrosshairs: true,
-      //   showItemMarker: true
-      // })
-      // chart.line().position('day*value').color('#009688').shape('smooth')
-      // chart.render()
-      // setChart(chart)
-      // return chart
+      const chart = new F2.Chart({
+        el: canvas,
+        width,
+        height,
+        padding: [50, 10, 30, 30]
+      })
+      chart.source(data, {
+        value: {
+          alias: '访问量'
+        }
+      })
+      chart.tooltip({
+        showTitle: true,
+        showCrosshairs: true,
+        showItemMarker: true
+      })
+      chart.line().position('day*value').color('#009688').shape('smooth')
+      chart.render()
+      setChart(chart)
+      return chart
     }
   }
 
@@ -85,7 +85,7 @@ const Chart: React.FC = () => {
     <View className="page-chart">
       <View className="chart">
         {/* @ts-ignore */}
-        {/* <ff-canvas canvas-id="f2-canvas" opts={chartOpts}></ff-canvas> */}
+        <ff-canvas canvas-id="f2-canvas" opts={chartOpts}></ff-canvas>
       </View>
     </View>
   )

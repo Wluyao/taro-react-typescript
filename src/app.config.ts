@@ -11,7 +11,7 @@ export default {
     },
     {
       root: 'pages/news',
-      pages: ['list', 'detail']
+      pages: ['list/list', 'detail/detail']
     }
   ],
   window: {
