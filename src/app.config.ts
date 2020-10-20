@@ -1,5 +1,19 @@
 export default {
   pages: ['pages/home/home', 'pages/mine/mine'],
+  subPackages: [
+    {
+      root: 'pages/chart',
+      pages: ['chart']
+    },
+    {
+      root: 'pages/blank',
+      pages: ['blank']
+    },
+    {
+      root: 'pages/news',
+      pages: ['list', 'detail']
+    }
+  ],
   window: {
     navigationBarBackgroundColor: '#30A7B0',
     navigationBarTextStyle: 'black',
